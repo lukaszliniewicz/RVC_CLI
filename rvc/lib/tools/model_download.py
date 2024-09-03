@@ -251,7 +251,9 @@ def download_from_url(url):
                                 f.write(chunk)
                 else:
                     os.chdir(now_dir)
-                    print(f"Failed to download file: HTTP status code {response.status_code}")
+                    print(
+                        f"Failed to download file: HTTP status code {response.status_code}"
+                    )
                     return None
             except Exception as error:
                 os.chdir(now_dir)
@@ -272,6 +274,7 @@ def download_from_url(url):
 
     os.chdir(now_dir)
     return None
+
 
 def extract_and_show_progress(zipfile_path, unzips_path):
     try:
